@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    input{
+        margin-right: 33px;
+        margin-left: 10px;
+        border-radius: 5px;
+    }
+    #submit_button{
+        margin: 0 auto;
+        margin-top: 20px 
+    }
+    #file_choose{
+        border-radius: 0px;
+        font-style: italic;
+    }
+</style>
+<div class="jumbotron">
+    <h1>Please Upload the File</h1>
+    <form  enctype = "multipart/form-data" method="POST">
+        {{form.hidden_tag()}}
+        {{form.file.label}} {{form.file()}} <br>
+        <a href="{{ url_for('download') }}">Download sample dataset</a><br>
+        <h1>Enter the Following details</h1>
+            <p>Enter your E-mail <input type="text" name="to_email" placeholder="example@yourmail.com" style="width: 500px;">
+            </p>
+            <p>Mail-Subject: <input type="text" name="subject" value="Here are your normalized marks" style="width: 500px;" />
+            </p>
+            <p>Mail-Content: <input type="text" name="content" value="Sending you the results" style="width: 500px;" /></p>
+            <p><input type="submit" value="send email" /></p>
+        </form>
+</div>
+
+    <div class="jumbotron">
+        <h1>Instructions for use :-</h1>
+        <ul>
+            <li>The file uploaded must be in xlsx format(Excel workbook)</li>
+            <li>The Column names should be corresponding to the ones listed below</li>
+                <ul>
+                    <li>RollNo</li>
+                    <li>Group</li>
+                    <li>Mark</li>
+                    <li>Name</li>
+                </ul>
+            <li>Sample dataset</li>
+            <img src="{{url_for('static', filename='data-color.svg')}}">
+        </ul>
+    </div>
+{% endblock %}
