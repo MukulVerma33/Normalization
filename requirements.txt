@@ -1,7 +1,7 @@
 absl-py==0.7.1
 alabaster==0.7.12
 alembic==0.9.9
-Django==2.2.2
+Django==2.2.8
 et-xmlfile==1.0.1
 Flask==1.0.2
 itsdangerous==0.24
