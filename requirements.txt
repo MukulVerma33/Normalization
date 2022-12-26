@@ -12,7 +12,7 @@ Pillow==6.0.0
 Werkzeug==0.14.1
 gunicorn==19.9.0
 MarkupSafe==1.0
-wheel==0.24.0
+wheel==0.38.1
 flask_wtf==0.14
 pandas==0.24.2
 NumPy==1.16.0
